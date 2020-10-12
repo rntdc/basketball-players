@@ -4,7 +4,13 @@
     margin: 0;
 }
 
-.team{
+.navbar-welcome {
+    position: fixed;
+    width: 100%;
+}
+
+/* welcome */
+.team {
     color: white;
     height: 100vh;
     display: flex;
@@ -23,13 +29,12 @@
 }
 
 .player-image {
-    position: absolute;
+    position: inherit;
 }
 
 .player-image img {
     width: 275px;
 }
-
 
 .houston-rockets {
     background: linear-gradient(to right, #CE1141 50%, #000000 50%);
@@ -43,6 +48,11 @@
     background: linear-gradient(to right,#000000 50%, #FDB927 50%);
 }
 
+
+/* formularios */
+.card {
+    margin-top: 15px;
+}
 
 
 #git{
