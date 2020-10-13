@@ -2,27 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use Redirect;
+use App\Models\Player;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
+
+    public function __construct() {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('home');
+    public function index() {
+        $players = Player::get();
+        return view('home', ['players' => $players]);
     }
+
+    public function add( Request $request ) {
+        $player = new Player;
+        $player = $player->create( $request->all() );
+        return Redirect::to('/home');
+    }
+    
 }
