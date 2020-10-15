@@ -25,3 +25,4 @@ Route::get('/home/form', 'App\Http\Controllers\PlayerController@form');
 Route::post('/home/add', 'App\Http\Controllers\PlayerController@add');
 Route::get('/home/{id}/edit', 'App\Http\Controllers\PlayerController@edit');
 Route::post('/home/update/{id}', 'App\Http\Controllers\PlayerController@update');
+Route::delete('/home/delete/{id}', 'App\Http\Controllers\PlayerController@delete');

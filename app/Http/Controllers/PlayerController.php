@@ -33,4 +33,10 @@ class PlayerController extends Controller
         $player->update( $request->all() );
         return Redirect::to('/home');
     }
+    
+    public function delete($id) {
+        $player = Player::findOrFail($id);
+        $player->delete();
+        return Redirect::to('/home');
+    }
 }

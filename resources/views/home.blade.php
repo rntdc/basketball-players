@@ -27,10 +27,14 @@
                                     <th scope="row">{{ $p->number }}</th>
                                     <td>{{ $p->name }}</td>
                                     <td>{{ $p->height }}</td>
-                                    <td>
-                                        <a href="home/{{ $p->id }}/edit"><img src="{{ url('img/pencil-fill.svg') }}" alt="" width="16" height="16"></a>
-                                        <a href="home/{{ $p->id }}/edit"><img src="{{ url('img/trash-fill.svg') }}" alt="" width="16" height="16"></a>
-                                    </td>
+                                    <form action="home/delete/{{ $p->id }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                        <td>
+                                            <a href="home/{{ $p->id }}/edit"><img src="{{ url('img/pencil-fill.svg') }}" alt="" width="16" height="16"></a>                                       
+                                            <button class="delete" type="submit"><img src="{{ url('img/trash-fill.svg') }}" alt="" width="16" height="16"></button>                                                                  
+                                        </td>
+                                    </form>
                                 </tr>
                             @endforeach
                         </tbody>
