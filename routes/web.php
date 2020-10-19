@@ -19,10 +19,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-Route::get('/home', 'App\Http\Controllers\PlayerController@index');
-Route::get('/home/form', 'App\Http\Controllers\PlayerController@form');
-Route::post('/home/add', 'App\Http\Controllers\PlayerController@add');
-Route::get('/home/{id}/edit', 'App\Http\Controllers\PlayerController@edit');
-Route::post('/home/update/{id}', 'App\Http\Controllers\PlayerController@update');
-Route::delete('/home/delete/{id}', 'App\Http\Controllers\PlayerController@delete');
+Route::get('/home', 'App\Http\Controllers\PlayerController@index')->middleware('auth');
+Route::get('/home/form', 'App\Http\Controllers\PlayerController@form')->middleware('auth');
+Route::post('/home/add', 'App\Http\Controllers\PlayerController@add')->middleware('auth');
+Route::get('/home/{id}/edit', 'App\Http\Controllers\PlayerController@edit')->middleware('auth');
+Route::post('/home/update/{id}', 'App\Http\Controllers\PlayerController@update')->middleware('auth');
+Route::delete('/home/delete/{id}', 'App\Http\Controllers\PlayerController@delete')->middleware('auth');

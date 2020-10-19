@@ -5,13 +5,14 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 col-sm-12">
-
+            
             <div class="card">
                 <div class="card-header">
                 <a href="{{ url('home/form') }}">Cadastrar</a>
                 </div>
-
+    
                 <div class="card-body text-center" id="list-players">
+                    @if($players->count()>0)
                     <table class="table">
                         <thead>
                             <tr>
@@ -39,8 +40,15 @@
                             @endforeach
                         </tbody>
                     </table>
+                    @else
+                    <h4 class="p-4"><a href="{{ url('home/form') }}">Cadastre novos jogadores!</a><h4>
+                    @endif
+                    
                 </div>
-            </div>
+            </div>            
+            
+
+            
         </div>
     </div>    
 </div>
